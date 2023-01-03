@@ -31,14 +31,8 @@ mergeSort xs = let n = length xs `div` 2
 
 
 -- Let's test our two sorting functions
--- This is in Data.List.Order but a fun exercise
-isSorted :: Ord a => [a] -> Bool
-isSorted [] = True
-isSorted [x] = True
-isSorted (x:y:xs) = (x <= y) && isSorted (y:xs)
-
 testSorted :: [Int] -> Bool
-testSorted xs = isSorted (mergeSort xs) && (mergeSort xs == insertionSort xs)
+testSorted xs = (mergeSort xs == insertionSort xs)
 
 main :: IO ()
 main = do
