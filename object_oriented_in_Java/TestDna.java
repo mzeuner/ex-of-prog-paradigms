@@ -1,5 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 
 
 class DnaSeq {
@@ -55,15 +57,37 @@ class DnaSeq {
     }
 
     public int check_exact_overlaps(DnaSeq other){
-	return check_exact_overlaps(other, 10);
+	return check_exact_overlaps(other, 2);
     }
 }
 
-public class DNA_Seq {
-    // if there's time
-    // public Map<DnaSeq,Map<DnaSeq,int>> check_all_overlaps(DnaSeq[]){
-    // }
+class DnaSeqs {
+    private List<DnaSeq> seqs;
 
+    public DnaSeqs (List<DnaSeq> seqs){
+	this.seqs = seqs;
+    }
+
+    public Map<DnaSeq,Map<DnaSeq,Integer>> check_all_overlaps(){
+	Map<DnaSeq,Map<DnaSeq,Integer>> mapOfMaps = new HashMap<DnaSeq,Map<DnaSeq,Integer>>();
+
+	for (int i = 0; i < this.seqs.size(); i++) {
+	    Map<DnaSeq,Integer> tempMap = new HashMap<DnaSeq,Integer>();
+
+	    for (int j = i; j < this.seqs.size(); j++) {
+		if (i != j) {
+		    tempMap.put(this.seqs.get(j), this.seqs.get(i).check_exact_overlaps(this.seqs.get(j)));
+		}
+	    }
+
+	    mapOfMaps.put(this.seqs.get(i),tempMap);
+	}
+	return mapOfMaps;
+    }
+
+}
+
+public class TestDna {
    public static void main ( String[] args ) {
        // test constructor, length and toString
        DnaSeq S1 = new DnaSeq ("s1", "ATGTTTGTTTTTCTTGTTTTATTGCCACTAGTCTCTAGTCAGTGTGTTAATCTTACAACCAGAACTCAAT");
@@ -82,5 +106,12 @@ public class DNA_Seq {
        DnaSeq S3 = new DnaSeq ("s3", "CCCGG");
 
        System.out.println(S2.check_exact_overlaps(S3));
+
+       List<DnaSeq> myList = new ArrayList<DnaSeq>();
+       myList.add(S1);
+       myList.add(S2);
+       myList.add(S3);
+       DnaSeqs allS = new DnaSeqs(myList);
+       System.out.println(allS.check_all_overlaps().toString());
    }
 }
