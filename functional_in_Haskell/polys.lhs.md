@@ -1,5 +1,6 @@
 # Polynomials with integer coefficients
 
 ```haskell
-polyToString : [Int] -> String
+polyToString :: [Int] -> String
+polyToString =
 ```
