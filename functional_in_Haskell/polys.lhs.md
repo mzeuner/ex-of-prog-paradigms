@@ -39,9 +39,9 @@ polyToString :: [Int] -> String
 
 that "prints" the polynomial represented by a list correctly, e.g.
 
-```
-polyToString [1,1,0,2,0] = '1 + x + 2x^3'
-polyToString [-1,-1,0,-2,0] = '-1 - x - 2x^3'
+```haskell
+polyToString [1,1,0,2,0] = "1 + x + 2x^3"
+polyToString [-1,-1,0,-2,0] = "-1 - x - 2x^3"
 ```
 
 This can then be used to make our polynomials an instance of the type class `Show`:
