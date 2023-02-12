@@ -87,3 +87,19 @@ mulPoly :: [Int] -> [Int] -> [Int]
 
 that corresponds to multiplication of polynomials, e.g.
 `(1 + x + 2x³) · (2 + 3x²) = 2 + 2x + 3x² + 7x³ + 6x⁵`
+
+### Bonus exercise 2.4 (💫)
+
+Read about Haskell's `QuickCheck` feature. Write a function
+
+```haskell
+myTest :: [Int] -> [Int] -> Bool
+```
+
+that "tests" the multiplicative rule for derivation:
+
+```
+der (p · q) = (der p) · q + p · (der q)
+```
+
+Write a  `main` function that runs `QuickCheck` on `myTest`.
