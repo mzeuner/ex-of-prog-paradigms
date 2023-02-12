@@ -40,8 +40,8 @@ polyToString :: [Int] -> String
 that "prints" the polynomial represented by a list correctly, e.g.
 
 ```
-polyToString [1,1,0,2,0] = "1 + x + 2x^3"
-polyToString [-1,-1,0,-2,0] = "-1 - x - 2x^3"
+polyToString [1,1,0,2,0] = '1 + x + 2x^3'
+polyToString [-1,-1,0,-2,0] = '-1 - x - 2x^3'
 ```
 
 This can then be used to make our polynomials an instance of the type class `Show`:
@@ -86,7 +86,4 @@ mulPoly :: [Int] -> [Int] -> [Int]
 ```
 
 that corresponds to multiplication of polynomials, e.g.
-
-```
-(1 + x + 2x³) · (2 + 3x²) = 2 + 2x + 3x² + 7x³ + 6x⁵
-```
+`(1 + x + 2x³) · (2 + 3x²) = 2 + 2x + 3x² + 7x³ + 6x⁵`
