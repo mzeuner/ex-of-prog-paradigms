@@ -7,7 +7,7 @@ to polynomials with integer coefficients. The polynomial
 
 This is a *one-to-many* relation: a polynomial can be represented by several lists.
 In our example, both `[1,2,3,4]` and `[1,2,3,4,0,0]` represent the same polynomial, as
-`1+2x+3x²+4x³=1+2x+3x²+4x³+0x⁴+0x⁵`. Adding zeros at the end of a list thus doesn't
+`1+2x+3x²+4x³ = 1+2x+3x²+4x³+0x⁴+0x⁵`. Adding zeros at the end of a list thus doesn't
 give a new polynomial.
 
 
