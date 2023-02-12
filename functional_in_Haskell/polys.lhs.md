@@ -1,7 +1,14 @@
 # Polynomials with integer coefficients
 
 In this exercise session we want to represent polynomials as
-lists of coefficients
+lists of coefficients. For simplicity we restrict our attention
+to polynomials with integer coefficients. The polynomial
+`1+2x+3x²+4x³` for example is represented by the list `[1,2,3,4]`.
+
+This is a *one-to-many* relation: a polynomial can be represented by several lists.
+In our example, both `[1,2,3,4]` and `[1,2,3,4,0,0]` represent the same polynomial, as
+`1+2x+3x²+4x³=1+2x+3x²+4x³+0x⁴+0x⁵`. Adding zeros at the end of a list thus doesn't
+give a new polynomial.
 
 
 ## Exercise 1
