@@ -73,7 +73,7 @@ addPoly :: [Int] -> [Int] -> [Int]
 
 that corresponds to addition of polynomials.
 
-### Exercise 2.3 (🌶🌶)
+### Exercise 2.2 (🌶🌶)
 
 Write a function
 
@@ -81,7 +81,7 @@ Write a function
 derPoly :: [Int] -> [Int]
 ```
 
-that corresponds to multiplication of polynomials, e.g.
+that corresponds to taking the derivative of a polynomial, e.g.
 `der (2 + 2x + 3x² + 7x³ + 6x⁵) = 2 + 6x + 21x² + 30x⁴`
 
 ### Exercise 2.3 (🌶🌶🌶)
