@@ -22,3 +22,14 @@ scandinavia([["Sweden",["Norway","Finland"]],
 	     ["Denmark",["Germany"]]
 	    ]).
 ```
+
+### Exercise 1
+Write a predicate `countries/2` that relates an adjacency list/map
+with the list of occurring countries. In our example you should get
+something like
+
+```prolog
+?- scandinavia(X),countries(X,Y).
+X = [["Sweden", ["Norway", "Finland"]], ["Finland", ["Russia", "Norway", "Sweden"]], ["Norway", ["Russia", "Finland", "Sweden"]], ["Denmark", ["Germany"]]],
+Y = ["Denmark", "Germany", "Russia", "Sweden", "Norway", "Finland"].
+```
