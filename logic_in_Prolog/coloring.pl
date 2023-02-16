@@ -1,31 +1,37 @@
 :- include(lists).
 
 %% Coloring a map
-countries(Map,X) :- join(Map,Y), remove_duplicates(Y,X).
+%% countries/2 gathers first components of "adjacency lists of countries"
+countries([],[]).
+countries([[C,N]|Map],X) :- countries(Map,Y), append(Y,[C|N],Z),
+			    remove_duplicates(Z,X),!.
 
-share_border(X,Y,Map) :- member([X,Y],Map) ; member([Y,X],Map).
+share_border(X,Y,Map) :- member([X,Z],Map) , member(Y,Z);
+		         member([Y,Z],Map) , member(X,Z).
 
 conflict(Map,Coloring) :-
     member([X,C],Coloring),
     member([Y,C],Coloring),
     share_border(X,Y,Map).
 
-all_colored_ordered([],_,[]).
-all_colored_ordered([C|Countries],Colors,[[C,F]|Coloring]) :-
-    member(F,Colors),
-    all_colored_ordered(Countries,Colors,Coloring).
-
 all_colored([],_,[]).
-all_colored(Countries,Colors,Coloring) :-
-    permutation(Countries,X),
-    all_colored_ordered(X,Colors,Coloring).
-
+all_colored([C|Countries],Colors,[[C,F]|Coloring]) :-
+    member(F,Colors),
+    all_colored(Countries,Colors,Coloring).
 
 color(Map,Colors,Coloring) :-
     countries(Map,Countries),
     all_colored(Countries,Colors,Coloring),
     \+ conflict(Map,Coloring).
 
-%% running:
-%% ?- color([["Sweden","Norway"],["Norway","Finland"],["Finland","Sweden"]],["yellow","blue","red"],X).
-%% gives: X = [["Norway", "yellow"], ["Finland", "blue"], ["Sweden", "red"]] .
+
+%% tests
+scandinavia([["Sweden",["Norway","Finland"]],
+	     ["Finland",["Russia","Norway","Sweden"]],
+	     ["Norway",["Russia","Finland","Sweden"]],
+	     ["Denmark",["Germany"]]
+	    ]).
+
+colors(["blue","green","red","yellow"]).
+
+test(Z) :- scandinavia(X),colors(Y),color(X,Y,Z).
