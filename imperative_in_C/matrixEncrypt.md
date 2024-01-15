@@ -14,8 +14,8 @@ should then *print* out the string that we get by "reading" the matrix column by
 **Example:** In order to encrypt `Secret text` with *3* columns,
 we create the following matrix
 
----|---|---
 S | e | c
+---|---|---
 r | e | t
 " " | t | e
 x | t | ""
