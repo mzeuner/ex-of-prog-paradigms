@@ -1,4 +1,6 @@
-## Exercise 1
+# Matrix cipher
+
+## Exercise 1 (🌶🌶)
 Write a function
 ```c
 void matrix_encrypt(char* s, int n, int cols)
@@ -9,21 +11,21 @@ row for row as shown in the example below. The function
 should then *print* out the string that we get by "reading" the matrix column by column.
 
 
-**Example** In order to encrypt `Secret text` with *3* columns,
+**Example:** In order to encrypt `Secret text` with *3* columns,
 we create the following matrix
 
 S | e | c
 ---|---|---
 r | e | t
 " " | t | e
-x | t | " "
+x | t | ""
 
 Note that the number of rows is thus implicitly given by the length of the
 input string and the number of columns.
 The ciphered text should thus be `Sr xeettcte`.
 
 
-**Test** if you run
+**Test:** if you run
 ```c
 int main () {
 matrix_encrypt ("Secret text" ,11 ,3) ;
@@ -38,16 +40,16 @@ Sce eterttx
 Stetcerxet
 ```
 
-## Exercise 2
+## Exercise 2 (🌶)
 Write a function `matrix_encrypt_pointer` that works just like `matrix_encrypt`
 but uses pointers and pointer arithmetic instead of array-indexing.
 
-## Exercise 3
+## Exercise 3 (🌶)
 Write a function `matrix_encrypt_goto` that works just like `matrix_encrypt`
 but uses `goto`-statements instead of `while` or `for` loops.
 
 
-## Exercise 4
+## Exercise 4 (🌶🌶)
 Write a function
 ```c
 void matrix_decrypt (char* s, int n, int cols)
