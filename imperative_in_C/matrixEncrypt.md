@@ -14,15 +14,16 @@ should then *print* out the string that we get by "reading" the matrix column by
 **Example:** In order to encrypt `Secret text` with *3* columns,
 we create the following matrix
 
-S | e | c
 ---|---|---
+S | e | c
 r | e | t
 " " | t | e
 x | t | ""
 
 Note that the number of rows is thus implicitly given by the length of the
 input string and the number of columns.
-The ciphered text should thus be `Sr xeettcte`.
+
+The ciphered text should then be `Sr xeettcte`.
 
 
 **Test:** if you run
@@ -54,7 +55,7 @@ Write a function
 ```c
 void matrix_decrypt (char* s, int n, int cols)
 ```
-that reverses `matrix_encrypt`, i.e. running
+that reverses `matrix_encrypt`, e.g. running
 ```c
 int main () {
 matrix_encrypt ("Sr xeettcte" ,11 ,3) ;
