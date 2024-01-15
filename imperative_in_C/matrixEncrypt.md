@@ -15,8 +15,8 @@ we create the following matrix
 S | e | c
 ---|---|---
 r | e | t
- | t | e
-x | t | 
+" " | t | e
+x | t | " "
 
 Note that the number of rows is thus implicitly given by the length of the
 input string and the number of columns.
