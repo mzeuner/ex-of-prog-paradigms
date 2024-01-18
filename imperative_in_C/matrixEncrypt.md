@@ -3,7 +3,7 @@
 ## Exercise 1 (🌶🌶)
 Write a function
 ```c
-void matrix_encrypt(char* s, int n, int cols)
+void matrix_encrypt(char s[], int n, int cols)
 ```
 that takes a string `s` of length `n` and encrypts it by
 "writing" the string into a matrix with `cols` columns,
@@ -42,7 +42,11 @@ Stetcerxet
 ```
 
 ## Exercise 2 (🌶)
-Write a function `matrix_encrypt_pointer` that works just like `matrix_encrypt`
+Write a function
+```c
+void matrix_encrypt_pointer(char* s, int n, int cols)
+```
+that works just like `matrix_encrypt`
 but uses pointers and pointer arithmetic instead of array-indexing.
 
 ## Exercise 3 (🌶)
@@ -58,9 +62,9 @@ void matrix_decrypt (char* s, int n, int cols)
 that reverses `matrix_encrypt`, e.g. running
 ```c
 int main () {
-matrix_encrypt ("Sr xeettcte" ,11 ,3) ;
-matrix_encrypt ("Sce eterttx" ,11 ,2) ;
-matrix_encrypt ("Stetcerxet" ,10 ,5) ;
+matrix_decrypt ("Sr xeettcte" ,11 ,3) ;
+matrix_decrypt ("Sce eterttx" ,11 ,2) ;
+matrix_decrypt ("Stetcerxet" ,10 ,5) ;
 }
 ```
 should get you
