@@ -1,5 +1,7 @@
 /*
-Do the matrix encryption exercise with pointers and goto
+Do the matrix encryption exercise
+from the take home exam 2021-03-15
+with pointers and goto
 */
 
 #include <stdio.h>
