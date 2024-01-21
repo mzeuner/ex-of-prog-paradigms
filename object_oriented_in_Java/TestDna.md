@@ -39,7 +39,7 @@ public int check_exact_overlaps(DnaSeq other,int minOverlap)
 to `DnaSeq` detecting overlaps between sequences.
 Two sequences `a` and `b` have an overlap of length *L*
 if the **last** *L* characters in `a`'s sequence (suffix)
-coincide with the **first** *L* characters in `b`'s sequence.
+coincide with the **first** *L* characters in `b`'s sequence (prefix).
 
 (**Warning**: this is not a symmetric property!).
 
@@ -48,7 +48,7 @@ the two sequences (`this` and `other`) have an overlap of length *L*
 and *0* if there is no such *L*.
 
 - **Example 1**: The DNA sequence `AAACCC` has an overlap of length 3 with
-  `CCCCGATT`, but no overlap of lengths 4 or longer.
+  `CCCCGATT`, but no overlap of length 4 or longer.
 - **Example 2**: `AAACCC` has no overlap with `GTACCC` or `GGGCCCTTT`.
 
 - **Example 3**: `AAACCC` overlaps with `ACCC`. In fact, it overlaps completely,
@@ -76,8 +76,9 @@ Assuming that overlaps are sparse, the method should return a
 "dictionary of dictionaries" containing the lengths of
 overlaps between sequences.
 
-(**Hint**: import `java.util.Map` for a dictionary API and
-`java.util.HashMap` for an implementation of the Map-API)
+**Hint**: import `java.util.Map` for a dictionary API and
+`java.util.HashMap` for an implementation of the Map-API.
+Using this, what type should `check_all_overlaps` return?
 
 If `s1` and `s2` overlap with length 10, then the resulting dictionary
 should a have an entry with key `s1` and as value a dictionary that
