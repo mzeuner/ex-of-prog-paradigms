@@ -93,7 +93,7 @@ public class TestDna {
        DnaSeq S1 = new DnaSeq ("s1", "ATGTTTGTTTTTCTTGTTTTATTGCCACTAGTCTCTAGTCAGTGTGTTAATCTTACAACCAGAACTCAAT");
 
        System.out.println(S1.length());
-       System.out.println(S1.toString());
+       System.out.println(S1);
 
        try{
 	   DnaSeq S2 = new DnaSeq ("", null);
