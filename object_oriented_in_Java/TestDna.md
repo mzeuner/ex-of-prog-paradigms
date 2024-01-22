@@ -4,7 +4,7 @@ The goal is to write a DNA sequences analysis prototype.
 
 
 
-## A class for DNA sequences (🌶)
+## Exercise 1: a class for DNA sequences (🌶)
 
 Define a class `DnaSeq` with two *private* attributes of type `String`:
 - `accession`, the unique identifier of a DNA sequence
@@ -30,7 +30,7 @@ the following methods:
 
 
 
-## A method to check overlaps (🌶🌶🌶)
+## Exercise 2: a method checking overlaps (🌶🌶🌶)
 
 Add a method
 ```java
@@ -64,7 +64,7 @@ setting the default value of `minOverlap` to *2*.
 
 
 
-## A higher-order function for checking all overlaps (🌶🌶)
+## Exercise 3: checking all overlaps in a list of DNA sequences (🌶🌶)
 
 Define a class `DnaSeqs` whose objects are lists of DNA sequences.
 The class should have one private attribute `seqs` of type

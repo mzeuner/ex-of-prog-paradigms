@@ -68,19 +68,22 @@ class DnaSeqs {
 	this.seqs = seqs;
     }
 
-    public Map<DnaSeq,Map<DnaSeq,Integer>> check_all_overlaps(){
-	Map<DnaSeq,Map<DnaSeq,Integer>> mapOfMaps = new HashMap<DnaSeq,Map<DnaSeq,Integer>>();
 
-	for (int i = 0; i < this.seqs.size(); i++) {
+    public Map<DnaSeq, Map<DnaSeq,Integer>> check_all_overlaps () {
+	Map<DnaSeq, Map<DnaSeq,Integer>> mapOfMaps = new HashMap<DnaSeq, Map<DnaSeq,Integer>>();
+
+	for (DnaSeq s1 : seqs) {
 	    Map<DnaSeq,Integer> tempMap = new HashMap<DnaSeq,Integer>();
 
-	    for (int j = i; j < this.seqs.size(); j++) {
-		if (i != j) {
-		    tempMap.put(this.seqs.get(j), this.seqs.get(i).check_exact_overlaps(this.seqs.get(j)));
+	    for (DnaSeq s2 : seqs) {
+		int overlap = s1.check_exact_overlaps(s2);
+		if (overlap!=0 && !s1.getAccession().equals(s2.getAccession())) {
+		    tempMap.put(s2,overlap);
 		}
 	    }
-
-	    mapOfMaps.put(this.seqs.get(i),tempMap);
+	    if (!tempMap.isEmpty()) {
+		mapOfMaps.put(s1,tempMap);
+	    }
 	}
 	return mapOfMaps;
     }
@@ -89,29 +92,27 @@ class DnaSeqs {
 
 public class TestDna {
    public static void main ( String[] args ) {
-       // test constructor, length and toString
-       DnaSeq S1 = new DnaSeq ("s1", "ATGTTTGTTTTTCTTGTTTTATTGCCACTAGTCTCTAGTCAGTGTGTTAATCTTACAACCAGAACTCAAT");
+       DnaSeq S1 = new DnaSeq ("s1", "ATCGGGATCGGCGATAGCG");
 
        System.out.println(S1.length());
        System.out.println(S1);
 
-       try{
-	   DnaSeq S2 = new DnaSeq ("", null);
+       try {
+	   DnaSeq S2 = new DnaSeq ("s1", "");
        }
-       catch (IllegalArgumentException e){
+       catch (IllegalArgumentException e) {
 	   System.out.println(e);
        }
+       DnaSeq S2 = new DnaSeq ("s2", "TAGCGATATTATATCGCG");
+       System.out.println(S1.check_exact_overlaps(S2));
 
-       DnaSeq S2 = new DnaSeq ("s2", "AAACCC");
-       DnaSeq S3 = new DnaSeq ("s3", "CCCGG");
-
-       System.out.println(S2.check_exact_overlaps(S3));
+       DnaSeq S3 = new DnaSeq ("s3", "CGTATGCGCTAGATC");
 
        List<DnaSeq> myList = new ArrayList<DnaSeq>();
        myList.add(S1);
        myList.add(S2);
        myList.add(S3);
        DnaSeqs allS = new DnaSeqs(myList);
-       System.out.println(allS.check_all_overlaps().toString());
+       System.out.println(allS.check_all_overlaps());
    }
 }
