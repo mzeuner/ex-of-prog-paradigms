@@ -13,24 +13,30 @@ we can then use in the main program.
 Write a binary predicate `member/2` representing membership in a list.
 `member(X,XS)` should be true if and only if `X` is a member of the list `XS`.
 
-### Exercise 2 (🌶🌶)
+### Exercise 2 (🌶)
+Write a ternary predicate `append/3` representing appending two lists.
+`append(XS,YS,ZS)` should be true if and only if `ZS` is the result of appending
+the lists `XS` and `YS`.
+
+### Exercise 3 (🌶)
+Write a binary predicate `join/2` representing joining all elements in a list of lists.
+`join(XSS,YS)` should be true if and only if `YS` is the result of appending
+all the lists in `XSS`.
+
+### Exercise 4 (🌶🌶)
 Write a binary predicate `remove_duplicates/2` such that
 `remove_duplicates(XS,YS)` is true if and only if `XS`
 has the same members as `YS` in the same order, but with every element only occurring once.
 
 **Hint:** Use a cut `!`.
 
-### Exercise 3 (🌶)
-Write a ternary predicate `append/3` representing appending two lists.
-`append(XS,YS,ZS)` should be true if and only if `ZS` is the result of appending
-the lists `XS` and `YS`.
-
-### Exercise 4 (🌶)
-Write a binary predicate `join/2` representing joining all elements in a list of lists.
-`join(XSS,YS)` should be true if and only if `YS` is the result of appending
-all the lists in `XSS`.
-
 ### Exercise 5 (🌶🌶)
+Write a ternary predicate `count/3` counting occurences of an element in a list.
+`count(X,XS,L)` should be true if and only if `X` occurs `L` times in `XS`.
+
+**Hint:** Use the built-in `findall/3`.
+
+### Exercise 6 (🌶🌶)
 Write a binary predicate `reverse/2` representing reversing a list.
 `reverse(XS,YS)` should be true if and only if `YS` is `XS` reversed.
 
