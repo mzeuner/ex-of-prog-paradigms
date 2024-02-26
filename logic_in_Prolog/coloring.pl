@@ -1,10 +1,7 @@
 :- include(lists).
 
 %% Coloring a map
-%% countries/2 gathers first components of "adjacency lists of countries"
-countries([],[]).
-countries([[C,N]|Map],X) :- countries(Map,Y), append(Y,[C|N],Z),
-			    remove_duplicates(Z,X),!.
+countries(Map,XS) :- flatten(Map,YS), remove_duplicates(YS,XS).
 
 shareBorder(X,Y,Map) :- member([X,Z],Map) ,!, member(Y,Z);
 		        member([Y,Z],Map) ,!, member(X,Z).
