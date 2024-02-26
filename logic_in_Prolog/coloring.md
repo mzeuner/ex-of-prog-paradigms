@@ -56,10 +56,10 @@ adjacent, i.e. neighboring, countries. In Prolog we can write the
 adjacency list of Scandinavia as follows:
 
 ```prolog
-scandinavia([["Sweden",["Norway","Finland"]],
+scandinavia([["Sweden",["Norway","Finland","Denmark"]],
 	     ["Finland",["Russia","Norway","Sweden"]],
 	     ["Norway",["Russia","Finland","Sweden"]],
-	     ["Denmark",["Germany"]]
+	     ["Denmark",["Sweden","Germany"]]
 	    ]).
 ```
 
@@ -147,7 +147,7 @@ and get something like
 
 ```prolog
 ?- testColor(Z).
-Z = [["Denmark", "blue"], ["Germany", "green"], ["Russia", "blue"], ["Sweden", "blue"], ["Norway", "green"], ["Finland", "red"]] .
+Z = [["Germany", "blue"], ["Russia", "blue"], ["Sweden", "blue"], ["Norway", "green"], ["Finland", "red"], ["Denmark", "green"]] .
 ```
 
 **Hint:** use `\+` for negation.

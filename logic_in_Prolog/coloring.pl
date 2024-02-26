@@ -30,10 +30,10 @@ color(Map,Colors,Coloring) :-
 
 
 %% tests
-scandinavia([["Sweden",["Norway","Finland"]],
+scandinavia([["Sweden",["Norway","Finland","Denmark"]],
 	     ["Finland",["Russia","Norway","Sweden"]],
 	     ["Norway",["Russia","Finland","Sweden"]],
-	     ["Denmark",["Germany"]]
+	     ["Denmark",["Sweden","Germany"]]
 	    ]).
 
 colors(["blue","green","red","yellow"]).
