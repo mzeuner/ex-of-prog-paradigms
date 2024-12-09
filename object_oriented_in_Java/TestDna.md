@@ -76,8 +76,8 @@ Assuming that overlaps are sparse, the method should return a
 "dictionary of dictionaries" containing the lengths of
 overlaps between sequences.
 
-**Hint**: import `java.util.Map` for a dictionary API and
-`java.util.HashMap` for an implementation of the Map-API.
+**Hint**: import `java.util.Map` for a map (think dictionary) interface and
+`java.util.HashMap` for an implementation of the map interface.
 Using this, what type should `check_all_overlaps` return?
 
 If `s1` and `s2` overlap with length 10, then the resulting dictionary
